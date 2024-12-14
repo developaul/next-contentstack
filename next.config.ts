@@ -5,7 +5,8 @@ const nextConfig: NextConfig = {
   output: "export",
   images: {
     unoptimized: true
-  }
+  },
+  basePath: '/next-contentstack'
 };
 
 export default nextConfig;

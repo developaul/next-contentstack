@@ -15,7 +15,7 @@ interface WebhookPageEntry extends BaseEntry {
 export const getWebhookPageEntry = async (): Promise<WebhookPageEntry> => {
   const entry = await stack
     .contentType("webhook_page")
-    .entry('blt6d682bb55aa1a131')
+    .entry('blt0a26c0eadcea4067')
     .fetch<WebhookPageEntry>();
 
   return entry
