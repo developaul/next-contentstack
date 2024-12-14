@@ -31,6 +31,10 @@ jobs:
         run: npm ci
 
       - name: Build with Next.js
+        env:
+          CONTENTSTACK_DELIVERY_TOKEN: ${{ secrets.CONTENTSTACK_DELIVERY_TOKEN }}
+          CONTENTSTACK_API_KEY: ${{ secrets.CONTENTSTACK_API_KEY }}
+          CONTENTSTACK_ENVIRONMENT: ${{ secrets.CONTENTSTACK_ENVIRONMENT }}
         run: npm run build
 
       - name: Upload artifact
