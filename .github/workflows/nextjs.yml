@@ -3,6 +3,7 @@ name: Deploy Next.js site to Pages
 on:
   push:
     branches: ["main"]
+  repository_dispatch:
   workflow_dispatch:
 
 permissions:
@@ -20,6 +21,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Log Webhook Event
+        run: |
+          echo "Received webhook event"
+          echo "Event: ${{ toJson(github.event) }}"
 
       - name: Setup Node
         uses: actions/setup-node@v4
