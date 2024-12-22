@@ -37,7 +37,11 @@ jobs:
           containerAppName: contentstack-next
           resourceGroup: contentstack-containerapps
           imageToBuild: cafb88bacb28acr.azurecr.io/contentstack-next:${{ github.sha }}
-          
+          environmentVariables: >
+            CONTENTSTACK_API_KEY=${{ secrets.CONTENTSTACK_API_KEY }}
+            CONTENTSTACK_DELIVERY_TOKEN=${{ secrets.CONTENTSTACK_DELIVERY_TOKEN }}
+            CONTENTSTACK_ENVIRONMENT=${{ secrets.CONTENTSTACK_ENVIRONMENT }}
+            CONTENTSTACK_LIVE_PREVIEW=${{ secrets.CONTENTSTACK_LIVE_PREVIEW }}
             
 
      
