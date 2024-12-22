@@ -1,9 +1,13 @@
+import LivePreview from "./components/LivePreview";
 import styles from "./page.module.css";
-import { getWebhookPageEntry } from "@/utils";
+import { getWebhookPageEntry, setLivePreviewQueryParams } from "@/utils";
 
-export default async function Home() {
+export default async function Home({ searchParams }: any) {
+  const queryParams = await searchParams;
+
+  setLivePreviewQueryParams(queryParams);
+
   const entry = await getWebhookPageEntry();
-
 
   return (
     <div className={styles.page}>
@@ -11,6 +15,8 @@ export default async function Home() {
         <button>
           {entry.description}
         </button>
+
+        <LivePreview />
       </main>
     </div>
   );
