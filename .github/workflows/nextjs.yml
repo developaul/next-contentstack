@@ -42,6 +42,7 @@ jobs:
           CONTENTSTACK_DELIVERY_TOKEN: ${{ secrets.CONTENTSTACK_DELIVERY_TOKEN }}
           CONTENTSTACK_API_KEY: ${{ secrets.CONTENTSTACK_API_KEY }}
           CONTENTSTACK_ENVIRONMENT: ${{ secrets.CONTENTSTACK_ENVIRONMENT }}
+          OUTPUT_MODE: "export"
         run: npm run build
 
       - name: Upload artifact
