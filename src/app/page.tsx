@@ -3,9 +3,11 @@ import styles from "./page.module.css";
 import { getWebhookPageEntry, setLivePreviewQueryParams } from "@/utils";
 
 export default async function Home({ searchParams }: any) {
-  const queryParams = await searchParams;
+  if (process.env.OUTPUT_MODE === "standalone") {
+    const queryParams = await searchParams;
 
-  setLivePreviewQueryParams(queryParams);
+    setLivePreviewQueryParams(queryParams);
+  }
 
   const entry = await getWebhookPageEntry();
 
@@ -16,7 +18,7 @@ export default async function Home({ searchParams }: any) {
           {entry.description}
         </button>
 
-        <LivePreview />
+        {process.env.OUTPUT_MODE === "standalone" && <LivePreview />}
       </main>
     </div>
   );
