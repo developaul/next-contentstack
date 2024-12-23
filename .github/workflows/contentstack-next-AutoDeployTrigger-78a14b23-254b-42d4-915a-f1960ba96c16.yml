@@ -5,7 +5,7 @@ on:
   # Automatically trigger it when detected changes in repo
   push:
     branches: 
-      [ main ]
+      [ develop ]
     paths:
     - '**'
     - '.github/workflows/contentstack-next-AutoDeployTrigger-78a14b23-254b-42d4-915a-f1960ba96c16.yml'
